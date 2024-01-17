@@ -1,0 +1,17 @@
+docker build ./
+
+# 부모 디렉토리에서 실행
+cd ..
+$ docker build -t <image-name> -f docker/Dockerfile .
+$ docker build -t dp -f docker/Dockerfile .
+
+$ docker run -d -p <PORT:PORT> --name <container-name> <image-name>
+$ docker run -d -p 3000:3000 --name dp-app dp
+
+//////
+
+https://tttsss77.tistory.com/161
+docker -v <host system directory>:<container directory> [IMAGE NAME]
+docker -volume="<host system directory>:<container directory>" [IMAGE NAME]
+
+https://velog.io/@semi-cloud/Docker-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EB%B3%BC%EB%A5%A8-%EB%A7%88%EC%9A%B4%ED%8A%B8%EB%A1%9C-%ED%98%B8%EC%8A%A4%ED%8A%B8%EC%99%80-%ED%8C%8C%EC%9D%BC-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0
