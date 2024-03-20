@@ -1,5 +1,10 @@
-import { Inter } from 'next/font/google'
+import ToastProvider from '@/components/toastProvider/ToastProvider'
 import './globals.css'
+import { Inter } from 'next/font/google'
+import Footer from '@/layouts/footer/Footer'
+import Header from '@/layouts/header/Header'
+import Provider from '@/redux/provider'
+import NavbarProvider from '@/layouts/navbar/NavbarProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,8 +15,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ko">
+      <body className={inter.className}>
+        <Provider>
+          <Header />
+          <ToastProvider />
+          <NavbarProvider>
+            {children}
+          </NavbarProvider>
+          <Footer />
+        </Provider>
+      </body>
     </html>
   )
 }
