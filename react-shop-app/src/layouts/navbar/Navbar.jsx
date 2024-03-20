@@ -4,12 +4,12 @@ import styles from './Navbar.module.scss';
 import { FaUserCircle } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import { useSelector } from 'react-redux';
-// import { selectUserName } from '@/redux/slice/authSlice';
+import { selectUserName } from '@/redux/slice/authSlice';
 import Link from 'next/link';
 
 const Navbar = () => {
   const pathname = usePathname();
-  // const userName = useSelector(selectUserName);
+  const userName = useSelector(selectUserName);
 
   return (
     <div className={styles.navbar}>

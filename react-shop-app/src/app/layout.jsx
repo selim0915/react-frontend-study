@@ -3,7 +3,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/layouts/footer/Footer'
 import Header from '@/layouts/header/Header'
-// import Provider from '@/redux/provider'
+import Provider from '@/redux/provider'
 import NavbarProvider from '@/layouts/navbar/NavbarProvider'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,14 +17,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body className={inter.className}>
-        {/* <Provider> */}
+        <Provider>
           <Header />
           <ToastProvider />
           <NavbarProvider>
             {children}
           </NavbarProvider>
           <Footer />
-        {/* </Provider> */}
+        </Provider>
       </body>
     </html>
   )

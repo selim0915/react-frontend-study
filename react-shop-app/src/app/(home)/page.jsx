@@ -1,9 +1,11 @@
-import Image from 'next/image'
+import Product from '@/components/product/Product';
+import Slider from '@/components/slider/Slider';
 
 export default function Home() {
   return (
-    <main>
-      Home
-    </main>
+    <>
+      <Slider />
+      <Product />
+    </>
   )
 }
