@@ -1,11 +1,10 @@
 import React from 'react'
+import CheckoutAddressClient from './CheckoutAddressClient'
 
-const CheckoutAdress = () => {
+const CheckoutAddress = () => {
   return (
-    <div>
-      CheckoutAdress
-    </div>
+    <CheckoutAddressClient />
   )
 }
 
-export default CheckoutAdress
+export default CheckoutAddress

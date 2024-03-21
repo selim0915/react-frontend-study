@@ -38,9 +38,7 @@ const filterSlice = createSlice({
             let tempProducts = [];
 
             tempProducts = products.filter(product => product.price <= price);
-
             state.filteredProducts = tempProducts;
-
         },
         FILTER_BY: (state, action) => {
             const { products, price, brand, category } = action.payload;
@@ -60,11 +58,8 @@ const filterSlice = createSlice({
                     (product) => product.brand === brand
                 )
             }
-
             tempProducts = tempProducts.filter(product => product.price <= price);
-
             state.filteredProducts = tempProducts;
-
         },
         SORT_PRODUCTS: (state, action) => {
             const { products, sort } = action.payload;
@@ -72,34 +67,26 @@ const filterSlice = createSlice({
             if (sort === 'latest') {
                 tempProducts = products;
             }
-
             if (sort === "lowest-price") {
                 tempProducts = products.slice().sort((a, b) => {
                     return a.price - b.price;
                 })
             }
-
             if (sort === 'highest-price') {
                 tempProducts = products.slice().sort((a, b) => {
                     return b.price - a.price;
                 })
             }
-
             state.filteredProducts = tempProducts
-
         },
         FILTER_BY_SEARCH: (state, action) => {
-
             const { products, search } = action.payload;
-
             const tempProducts = products.filter(
                 (product) =>
                     product.name.toLowerCase().includes(search.toLowerCase()) ||
                     product.category.toLowerCase().includes(search.toLowerCase())
             )
-
             state.filteredProducts = tempProducts;
-
         }
     }
 });

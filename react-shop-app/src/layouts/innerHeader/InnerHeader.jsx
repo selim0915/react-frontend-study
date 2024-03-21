@@ -9,21 +9,21 @@ import { useRouter } from 'next/navigation';
 import styles from './InnerHeader.module.scss';
 import logo from '@/assets/colorful.svg';
 import classNames from 'classnames';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { FILTER_BY_SEARCH } from '@/redux/slice/filterSlice';
-// import { selectProducts } from '@/redux/slice/productSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { FILTER_BY_SEARCH } from '@/redux/slice/filterSlice';
+import { selectProducts } from '@/redux/slice/productSlice';
 // import { selectCartTotalQuantity } from '@/redux/slice/cartSlice';
 
 const InnerHeader = () => {
   const router = useRouter();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [search, setSearch] = useState("");
-  // const products = useSelector(selectProducts);
+  const products = useSelector(selectProducts);
   // const cartTotalQuantity = useSelector(selectCartTotalQuantity);
 
-  // useEffect(() => {
-  //   dispatch(FILTER_BY_SEARCH({ products, search }));
-  // }, [dispatch, products, search])
+  const handleSearch = () => {
+    dispatch(FILTER_BY_SEARCH({ products, search }));
+  }
 
   const handleClick = () => {
     router.push('/cart');
@@ -31,16 +31,15 @@ const InnerHeader = () => {
 
   return (
     <div className={styles.innerHeader}>
-      {/* <!-- 로고 --> */}
       <h1 className={styles.brand}>
         <Link href="/">
           <Image src={logo} alt="logo" width={211} height={48} priority />
         </Link>
       </h1>
-      {/* <!-- 카테로기버튼 --> */}
+      
       <button type="button" className={styles.buttonCategory}>카테고리</button>
-      {/* <!-- 검색 폼  --> */}
-      <form action="/" className={styles.searchForm}>
+      
+      <form className={styles.searchForm}>
         <fieldset>
           <div className={styles.searchFormWrapper}>
             <div className={styles.formSelect}>
@@ -57,16 +56,18 @@ const InnerHeader = () => {
             </div>
             <div className={styles.formInput}>
               <input
-                type="search" id="searchKeyword"
+                type="text" id="searchKeyword"
                 placeholder="찾고 싶은 상품을 검색해보세요!"
-                value={search} onChange={(e) => setSearch(e.target.value)}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
               />
             </div>
-            <button type="button" className={styles.searchButton}></button>
+            <button type="button" className={styles.searchButton} onClick={handleSearch}></button>
             <button type="button" className={styles.voiceSearchButton}></button>
           </div>
         </fieldset>
       </form>
+
       {/* <!-- 마이쿠팡영역 --> */}
       <div className={styles.myCoupang}>
         <button type="button" className={classNames(styles.button, styles.myCoupangButton)}>마이쿠팡</button>
@@ -76,6 +77,7 @@ const InnerHeader = () => {
           <li><Link href="/">찜리스트</Link></li>
         </ul>
       </div>
+
       {/* <!-- 장바구니 영역 --> */}
       <div className={styles.cart}>
         <div className={styles.cartButtonWrapper}>
@@ -87,6 +89,7 @@ const InnerHeader = () => {
           {/* <strong className={styles.cartProductCount}>{cartTotalQuantity}</strong> */}
         </div>
       </div>
+
       {/* <!-- 유형별 링크목록 --> */}
       <div className={styles.typeNavigation}>
         <ul className={styles.typeNavigationList}>
