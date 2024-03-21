@@ -1,11 +1,5 @@
-import React from 'react'
+import dayjs from "dayjs";
 
-const dayjs = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+export function formatTime(time, format = 'YYYY.MM.DD') {
+   return dayjs(time).format(format)
 }
-
-export default dayjs

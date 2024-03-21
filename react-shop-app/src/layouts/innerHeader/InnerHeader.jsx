@@ -39,7 +39,7 @@ const InnerHeader = () => {
       
       <button type="button" className={styles.buttonCategory}>카테고리</button>
       
-      <form className={styles.searchForm} onsubmit="return false">
+      <form className={styles.searchForm}>
         <fieldset>
           <div className={styles.searchFormWrapper}>
             <div className={styles.formSelect}>
