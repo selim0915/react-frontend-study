@@ -1,11 +1,5 @@
-import React from 'react'
-
-const priceFormat = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+const priceFormat = (price) => {
+    return price.toLocaleString('ko-Kr');
 }
 
-export default priceFormat
+export default priceFormat;

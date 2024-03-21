@@ -69,6 +69,7 @@ const ProductList = () => {
 
         <div className={styles.limit}>
           <select value={productsPerPage} onChange={(e) => setProductsPerPage(Number(e.target.value))}>
+            <option value={5}>5개씩 보기</option>
             <option value={10}>10개씩 보기</option>
             <option value={20}>20개씩 보기</option>
           </select>

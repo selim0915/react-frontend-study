@@ -9,17 +9,13 @@ import rocketBadgeIcon from '@/assets/badge-rocket.svg';
 import useFetchDocuments from '@/hooks/useFetchDocuments';
 
 const ProductItem = ({ id, name, price, imageURL, category, brand }) => {
+  const { documents } = useFetchDocuments('reviews', ["productID", "==", id])
 
-  // const { documents } = useFetchDocuments('reviews', ["productID", "==", id])
-
-  // let productRating = 0;
-
-  // documents.map(doc => {
-  //   productRating = productRating + doc.rate;
-  // })
-
-  // const rating = productRating / documents.length;
-
+  let productRating = 0;
+  documents.map(doc => {
+    productRating = productRating + doc.rate;
+  })
+  const rating = productRating / documents.length;
 
   const shortenText = (text, n) => {
     if (text.length > n) {
@@ -51,12 +47,10 @@ const ProductItem = ({ id, name, price, imageURL, category, brand }) => {
             <Rating
               size={17}
               readonly
-              initialValue={1}
-            // initialValue={Number.isNaN(rating) ? 0 : rating}
+              initialValue={Number.isNaN(rating) ? 0 : rating}
             />
             <span className={styles.ratingCount}>
-              (1)
-              {/* ({documents.length}) */}
+              ({documents.length})
             </span>
           </div>
         </div>
