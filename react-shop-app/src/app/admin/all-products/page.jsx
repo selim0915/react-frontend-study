@@ -1,11 +1,8 @@
 import React from 'react'
+import AllProductsClient from './AllProductsClient'
 
-const AllProduct = () => {
-  return (
-    <div>
-      AllProduct
-    </div>
-  )
+const AllProducts = () => {
+  return <AllProductsClient />
 }
 
-export default AllProduct
+export default AllProducts

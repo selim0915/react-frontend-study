@@ -1,6 +1,6 @@
 *.env
+
 react-next-firebase-chat-app/node_modules/
-react-shop-app/node_modules/
-react-shop-app/.next/cache/webpack/client-development/0.pack.gz
-react-shop-app/.next/
 react-next-firebase-chat-app/.next/
+react-shop-app/node_modules/
+react-shop-app/.next/

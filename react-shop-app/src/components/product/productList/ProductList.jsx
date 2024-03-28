@@ -3,7 +3,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './ProductList.module.scss';
 import ProductItem from '../productItem/ProductItem';
-import Pagination from '@/components/pagenation/Pagination';
+import Pagination from '@/components/pagination/Pagination';
 
 const ProductList = () => {
   const dispatch = useDispatch();
