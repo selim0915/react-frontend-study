@@ -1,4 +1,5 @@
 ### - my-app (CRA)
+### - onebite-typescript (한 입 크기로 잘라먹는 타입스크립트(TypeScript))
 ### - react-basic-project (기술 검토 페이지)
 ### - react-next-firebase-chat-app (fiirebase chat 페이지)
 ### - react-shop-app (상품/주문 커머스 페이지)
