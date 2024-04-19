@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "strict": true,
+    "allowJs": true,
+    "esModuleInterop": true, // default export가 없는 모듈도 import 가능하게 하는 옵셥
+    "jsx": "react-jsx"
+    // "forceConsistentCasingInFileNames": true,
+    // "skipLibCheck": true,
+    // "moduleDetection": "force"
+  },
+  "include": [
+    "src"
+  ]
+}
