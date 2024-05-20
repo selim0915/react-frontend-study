@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "name": "CHROME",
+      "request": "launch",
+      "type": "chrome",
+      "url": "https://localhost",
+      "webRoot": "${workspaceFolder}/base-app"
+    },
+    {
+      "name": "NODE",
+      "request": "launch",
+      "type": "node",
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register"
+      ],
+      "runtimeExecutable": "node",
+      "program": "${workspaceFolder}/base-app/server.js",
+      "cwd": "${workspaceFolder}/base-app",
+      "skipFiles": [
+        "<node_internals>/**",
+        "node_modules/**"
+      ],
+      "sourceMaps": true
+    }
+  ]
+}
